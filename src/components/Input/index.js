@@ -35,7 +35,10 @@ class Input extends Component {
           />
         </div>
         <div>
-          <Buttons handleButtonSelectOne={this.handleButtonSelectTwo} />
+          <Buttons
+            handleButtonSelectOne={this.handleButtonSelectTwo}
+            array={this.state.password.length}
+          />
         </div>
       </div>
     );

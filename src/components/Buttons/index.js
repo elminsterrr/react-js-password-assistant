@@ -10,32 +10,16 @@ const style = {
 };
 
 const Buttons = props => {
-  const arr = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-  ];
+  const arrayFromInput = props.array;
+  const buttonsArray = [];
+
+  for (let i = 1; i <= arrayFromInput; i++) {
+    buttonsArray.push(i);
+  }
 
   const handleButtonSelectZero = props.handleButtonSelectOne;
 
-  const allButtons = arr.map(el => (
+  const allButtons = buttonsArray.map(el => (
     <RaisedButton
       key={el}
       label={el}
@@ -44,7 +28,11 @@ const Buttons = props => {
     />
   ));
 
-  return <div>{allButtons}</div>;
+  if (arrayFromInput > 0) {
+    return <div>{allButtons}</div>;
+  }
+
+  return <div />;
 };
 
 export default Buttons;
