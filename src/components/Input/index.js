@@ -11,6 +11,7 @@ class Input extends Component {
       password: '',
       selectedButtons: [],
     };
+    this.handleButtonSelectTwo = this.handleButtonSelectTwo.bind(this);
   }
 
   handleInputChange(pass) {
@@ -18,7 +19,9 @@ class Input extends Component {
   }
 
   handleButtonSelectTwo(selected) {
-    console.log(selected);
+    this.setState({
+      selectedButtons: [...this.state.selectedButtons, selected],
+    });
   }
 
   render() {
