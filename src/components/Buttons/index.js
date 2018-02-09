@@ -9,7 +9,7 @@ const style = {
   },
 };
 
-const Buttons = () => {
+const Buttons = props => {
   const arr = [
     1,
     2,
@@ -33,12 +33,14 @@ const Buttons = () => {
     20,
   ];
 
+  const handleButtonSelectZero = props.handleButtonSelectOne;
+
   const allButtons = arr.map(el => (
     <RaisedButton
       key={el}
       label={el}
       style={style.button}
-      onClick={() => this.handleButtonSelect()}
+      onClick={() => handleButtonSelectZero(el)}
     />
   ));
 

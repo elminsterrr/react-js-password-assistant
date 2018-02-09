@@ -7,11 +7,18 @@ import Buttons from '../Buttons';
 class Input extends Component {
   constructor(props) {
     super(props);
-    this.state = { password: '' };
+    this.state = {
+      password: '',
+      selectedButtons: [],
+    };
   }
 
   handleInputChange(pass) {
     this.setState({ password: pass });
+  }
+
+  handleButtonSelectTwo(selected) {
+    console.log(selected);
   }
 
   render() {
@@ -25,7 +32,7 @@ class Input extends Component {
           />
         </div>
         <div>
-          <Buttons />
+          <Buttons handleButtonSelectOne={this.handleButtonSelectTwo} />
         </div>
       </div>
     );
