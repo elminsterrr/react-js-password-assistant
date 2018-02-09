@@ -1,13 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {
-  button: {
-    margin: 2,
-    padding: 0,
-    minWidth: 1,
-  },
-};
+import OneButton from '../OneButton';
 
 const Buttons = props => {
   const arrayFromInput = props.array;
@@ -20,7 +13,7 @@ const Buttons = props => {
   const handleButtonSelectZero = props.handleButtonSelectOne;
 
   const allButtons = buttonsArray.map(el => (
-    <MyButton key={el} onClick={handleButtonSelectZero} el={el} />
+    <OneButton key={el} el={el} onClick={handleButtonSelectZero} />
   ));
 
   if (arrayFromInput > 0) {
@@ -29,27 +22,5 @@ const Buttons = props => {
 
   return <div />;
 };
-
-class MyButton extends React.Component {
-  constructor() {
-    super();
-    this.state = { disabled: false };
-  }
-  handleClick = () => {
-    this.setState({ disabled: !this.state.disabled });
-    this.props.onClick(this.props.el);
-  };
-  render() {
-    return (
-      <RaisedButton
-        disabled={this.state.disabled}
-        key={this.props.el}
-        label={this.props.el}
-        style={style.button}
-        onClick={() => this.handleClick()}
-      />
-    );
-  }
-}
 
 export default Buttons;
