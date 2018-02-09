@@ -20,12 +20,7 @@ const Buttons = props => {
   const handleButtonSelectZero = props.handleButtonSelectOne;
 
   const allButtons = buttonsArray.map(el => (
-    <RaisedButton
-      key={el}
-      label={el}
-      style={style.button}
-      onClick={() => handleButtonSelectZero(el)}
-    />
+    <MyButton key={el} onClick={handleButtonSelectZero} el={el} />
   ));
 
   if (arrayFromInput > 0) {
@@ -34,5 +29,27 @@ const Buttons = props => {
 
   return <div />;
 };
+
+class MyButton extends React.Component {
+  constructor() {
+    super();
+    this.state = { disabled: false };
+  }
+  handleClick = () => {
+    this.setState({ disabled: !this.state.disabled });
+    this.props.onClick(this.props.el);
+  };
+  render() {
+    return (
+      <RaisedButton
+        disabled={this.state.disabled}
+        key={this.props.el}
+        label={this.props.el}
+        style={style.button}
+        onClick={() => this.handleClick()}
+      />
+    );
+  }
+}
 
 export default Buttons;
