@@ -24,11 +24,11 @@ class Results extends Component {
     const { selectedButtons, password } = this.props.appState;
     const passwordArray = password.split('').map(el => el);
 
-    const lastSelectedButton = selectedButtons[index];
+    const selectedButton = selectedButtons[index];
     const passwordString = passwordArray[selectedButtons[index] - 1];
 
     if (arg === 0) {
-      return lastSelectedButton;
+      return selectedButton;
     }
 
     if (arg === 1) {
