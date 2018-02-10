@@ -18,6 +18,9 @@ class Input extends Component {
 
   handleInputChange(pass) {
     this.setState({ password: pass });
+    if (pass === '') {
+      this.setState({ selectedButtons: [] });
+    }
   }
 
   handleButtonSelectTwo(selected) {
