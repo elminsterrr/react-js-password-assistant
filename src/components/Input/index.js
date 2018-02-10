@@ -37,6 +37,7 @@ class Input extends Component {
       <div>
         <div className="Input-textfield">
           <TextField
+            inputStyle={{ textAlign: 'center' }}
             hintText="Paste your password here to begin"
             value={this.state.password}
             onChange={event => this.handleInputChange(event.target.value)}

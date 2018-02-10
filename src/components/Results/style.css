@@ -1,6 +1,4 @@
 .Results-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   height: 50px;
+  width: 250px;
 }
