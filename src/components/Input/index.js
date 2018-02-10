@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 import Buttons from '../Buttons';
@@ -10,10 +11,17 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      password: 'Hh9Xzke2ayzcEUPHuIfS',
+      password: '',
       selectedButtons: [],
     };
     this.handleButtonSelectTwo = this.handleButtonSelectTwo.bind(this);
+  }
+
+  handleReset() {
+    this.setState({
+      password: '',
+      selectedButtons: [],
+    });
   }
 
   handleInputChange(pass) {
@@ -39,6 +47,11 @@ class Input extends Component {
     return (
       <div>
         <div className="Input-textfield">
+          <RaisedButton
+            label="Reset"
+            fullWidth
+            onClick={() => this.handleReset()}
+          />
           <TextField
             inputStyle={{ textAlign: 'center' }}
             hintText="Paste your password here to begin"
