@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 
-import './style.css';
-
 import Buttons from '../Buttons';
 import Results from '../Results';
+
+import './style.css';
 
 class Input extends Component {
   constructor(props) {
@@ -27,8 +27,8 @@ class Input extends Component {
   }
 
   handleResults() {
-    return this.state.selectedButtons.map(el => (
-      <Results key={el} appState={this.state} />
+    return this.state.selectedButtons.map((el, index) => (
+      <Results key={el} index={index} appState={this.state} />
     ));
   }
 

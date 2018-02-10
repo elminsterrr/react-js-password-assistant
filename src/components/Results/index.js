@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 
-import Avatar from 'material-ui/Avatar';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
+import Avatar from 'material-ui/Avatar';
 
 import './style.css';
 
@@ -21,11 +20,12 @@ const style = {
 
 class Results extends Component {
   resultsEngine(arg) {
+    const { index } = this.props;
     const { selectedButtons, password } = this.props.appState;
     const passwordArray = password.split('').map(el => el);
 
-    const lastSelectedButton = _.last(selectedButtons);
-    const passwordString = passwordArray[_.last(selectedButtons) - 1];
+    const lastSelectedButton = selectedButtons[index];
+    const passwordString = passwordArray[selectedButtons[index] - 1];
 
     if (arg === 0) {
       return lastSelectedButton;
@@ -40,7 +40,7 @@ class Results extends Component {
   render() {
     if (this.props.appState.selectedButtons.length > 0) {
       return (
-        <div className="test">
+        <div className="Results-list">
           <List style={style.avatarList}>
             <ListItem
               disabled
