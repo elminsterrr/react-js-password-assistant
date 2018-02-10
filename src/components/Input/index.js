@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+
 import './style.css';
 
 import Buttons from '../Buttons';
@@ -9,7 +10,7 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      password: '',
+      password: 'Hh9Xzke2ayzcEUPHuIfS',
       selectedButtons: [],
     };
     this.handleButtonSelectTwo = this.handleButtonSelectTwo.bind(this);
@@ -23,6 +24,12 @@ class Input extends Component {
     this.setState({
       selectedButtons: [...this.state.selectedButtons, selected],
     });
+  }
+
+  handleResults() {
+    return this.state.selectedButtons.map(el => (
+      <Results key={el} appState={this.state} />
+    ));
   }
 
   render() {
@@ -40,7 +47,7 @@ class Input extends Component {
             handleButtonSelectOne={this.handleButtonSelectTwo}
             array={this.state.password.length}
           />
-          <Results appState={this.state} />
+          {this.handleResults()}
         </div>
       </div>
     );
