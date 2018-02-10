@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import './style.css';
 
 import Buttons from '../Buttons';
+import Results from '../Results';
 
 class Input extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class Input extends Component {
             handleButtonSelectOne={this.handleButtonSelectTwo}
             array={this.state.password.length}
           />
+          <Results appState={this.state} />
         </div>
       </div>
     );
