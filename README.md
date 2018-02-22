@@ -11,6 +11,10 @@ I was tired of counting this by myself so I've created a password assistant.
 This app does not send anything outside and all calculations are made inside your browser.
 
 
+## App screenshot
+![App screenshot](https://res.cloudinary.com/dfe57evk4/image/upload/v1519285628/app_legend_vrbumr.png)
+
+
 ## Getting Started
 
 ### Installation
