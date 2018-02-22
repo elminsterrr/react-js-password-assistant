@@ -8,7 +8,11 @@ You can see it live here: [Heroku](https://react-js-password-assistant.herokuapp
 I created it for some banks websites where while logging they ask you to give the first letter of your password, then, for example, fourth, then seventh etc.
 I was tired of counting this by myself so I've created a password assistant.
 
-This app does not send anything outside and all calculations are made inside your bowser.
+This app does not send anything outside and all calculations are made inside your browser.
+
+
+## App screenshot
+![App screenshot](https://res.cloudinary.com/dfe57evk4/image/upload/v1519285628/app_legend_vrbumr.png)
 
 
 ## Getting Started

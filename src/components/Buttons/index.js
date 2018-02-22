@@ -1,6 +1,8 @@
 import React from 'react';
 
 import OneButton from '../OneButton';
+import appLegend from './app_legend.png';
+import './style.css';
 
 const Buttons = props => {
   const arrayFromInput = props.array;
@@ -17,7 +19,15 @@ const Buttons = props => {
   ));
 
   if (arrayFromInput > 0) {
-    return <div>{allButtons}</div>;
+    return (
+      <div>
+        {allButtons}
+        <br />
+        <div className="Buttons-img-div">
+          <img src={appLegend} alt="App legend" />
+        </div>
+      </div>
+    );
   }
 
   return <div />;
