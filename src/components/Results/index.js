@@ -9,7 +9,7 @@ import './style.css';
 const style = {
   avatarList: {
     position: 'relative',
-    left: -14,
+    left: -55,
   },
   avatarSecond: {
     position: 'relative',
